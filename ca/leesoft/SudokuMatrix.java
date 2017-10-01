@@ -33,6 +33,9 @@ public class SudokuMatrix {
     public boolean validateLine(){
         for (List<Integer> line : _matrix) {
             Set<Integer> verifier = new HashSet<>();
+            if(line.size()!=this._matrix.size()){
+                return false;
+            }
             for (Integer num : line) {
                 if(verifier.contains(num)){
                     return false;
